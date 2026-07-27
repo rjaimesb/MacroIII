@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Semanas 3 y 4 — Macroeconomía III</title>
+    <link href="style.css" rel="stylesheet">
+    <script id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html">Macroeconomía III</a>
+    <span class="term">2026-II</span>
+  </div>
+</header>
+
+<main class="container">
+
+<p class="crumb"><a href="index.html">← Volver al inicio</a></p>
+<h1>Semanas 3 y 4: Política Monetaria y Determinación del Tipo de Cambio Nominal y Crisis de Balanza de Pagos.</h1>
+
+<h2>Introducción y objetivos</h2>
+<ul>
+    <li>El interés está en analizar la determinación de variables <em>nominales</em> en un modelo macroeconómico de largo plazo de economía abierta.</li>
+    <li>Al igual que en el bloque de Dinero y Precios, el deseo de mantener dinero está asociado a la reducción de los costos de transacción, así como a los motivos de precaución y especulación.</li>
+    <li>La ruta de trabajo es:
+        <ol>
+            <li>Teoría cuantitativa del dinero en economía abierta.</li>
+            <li>Relación entre el déficit fiscal y el tipo de cambio.</li>
+            <li>Crisis de Balanza de Pagos (BOP).</li>
+        </ol>
+    </li>
+    <li>Referencias: Schmitt-Grohe, Uribe &amp; Woodford (2011, cap. 10) y Krugman (1979, 1997).</li>
+</ul>
+
+<h2>Teoría cuantitativa del dinero en economía abierta</h2>
+<ul>
+    <li>La teoría cuantitativa, entendida como una teoría de la demanda de dinero, plantea que los agentes mantienen una fracción constante de sus saldos reales:
+        $$M^d = \kappa\, P\, Y, \qquad 0 < \kappa < 1$$
+        donde \( M^d \) es la demanda de saldos nominales, \( P \) el nivel de precios y \( Y \) el producto real.</li>
+    <li>Definiendo los saldos reales \( m^d = \frac{M^d}{P} \), el equilibrio en el mercado de dinero doméstico y externo es
+        $$\frac{M^s}{P} = m^d, \qquad \frac{M^{*s}}{P^*} = m^{*d}.$$
+    </li>
+    <li>Sea \( E \) el tipo de cambio nominal (pesos por dólar) y \( e \) el tipo de cambio real, definido como
+        $$e = \frac{E P^*}{P}.$$
+    </li>
+    <li>Combinando las tres relaciones se obtiene una ecuación para el tipo de cambio nominal:
+        $$E = \frac{M^s}{M^{*s}}\left( e\,\frac{m^{*d}}{m^d} \right).$$
+    </li>
+    <li>Como \( m^d \), \( m^{*d} \) y \( e \) están determinadas por factores reales, se cumple la <em>dicotomía clásica</em>: el tipo de cambio nominal depende de las cantidades de dinero y de los factores que afectan la demanda de dinero.</li>
+    <li>La ecuación depende del <em>régimen cambiario</em>. Los dos casos extremos son el tipo de cambio flexible y el tipo de cambio fijo.</li>
+</ul>
+
+<h2>Regímenes cambiarios</h2>
+<h3>Tipo de cambio flexible</h3>
+<ul>
+    <li>La oferta y demanda de divisas determinan libremente \( E \); las cantidades de dinero \( M^s \) y \( M^{*s} \) son exógenas (fijadas por los bancos centrales) y \( E \) es la variable endógena.</li>
+    <li>Un aumento de \( M^s \) deprecia el tipo de cambio en la misma proporción (elasticidad unitaria) y eleva el nivel de precios \( P \) proporcionalmente: los hogares tienen más dinero del que desean, demandan bienes y presionan los precios al alza.</li>
+    <li>Un aumento del tipo de cambio real \( e \) (por mejores términos de intercambio o menores aranceles) deprecia \( E \) sin cambiar \( P \) si la oferta monetaria no varía.</li>
+</ul>
+<h3>Tipo de cambio fijo</h3>
+<ul>
+    <li>El tipo de cambio pasa a ser la variable exógena y la cantidad de dinero se vuelve endógena: el banco central fija \( E \) y ajusta \( M^s \) para sostenerlo.</li>
+    <li>Si \( e \) se deprecia, para mantener \( E \) constante \( M \) debe caer en la misma proporción, y con ello \( P \) también cae: se presenta una <em>deflación</em>, a diferencia del régimen flexible donde los precios se mantienen constantes.</li>
+</ul>
+
+<h2>Déficit fiscales y tasa de cambio</h2>
+<ul>
+    <li>La teoría cuantitativa aún no incorpora el efecto de la política fiscal sobre la inflación. Para ello se usa una economía pequeña y abierta, de dotación, con libre movilidad de capitales, un bien transable por periodo y un gobierno que cobra impuestos de suma fija.</li>
+    <li>El modelo se compone de cuatro bloques:
+        <ol>
+            <li><strong>Demanda de dinero:</strong> \( \dfrac{M_t}{P_t} = L(\bar{C}, i_t) \), creciente en el consumo \( \bar{C} \) (constante) y decreciente en la tasa de interés nominal \( i_t \).</li>
+            <li><strong>Paridad de poder de compra (PPP):</strong> \( P_t = E_t P_t^* \). Con \( P_t^* = 1 \) se tiene \( P_t = E_t \), de modo que \( \dfrac{M_t}{E_t} = L(\bar{C}, i_t) \).</li>
+            <li><strong>Paridad no cubierta de la tasa de interés:</strong> sin incertidumbre ni restricciones al capital,
+                $$1 + i_t = (1 + r^*)\,\frac{E_{t+1}}{E_t}.$$
+            </li>
+            <li><strong>Restricción presupuestaria del gobierno.</strong></li>
+        </ol>
+    </li>
+    <li>El gobierno se financia con impuestos \( T_t \), señoreaje \( M_t - M_{t-1} \) e intereses sobre bonos externos \( E_t r^* B_{t-1}^g \). En términos reales:
+        $$B_t^g - B_{t-1}^g = \frac{M_t - M_{t-1}}{P_t} - DEF_t,$$
+        donde el <em>déficit secundario</em> es \( DEF_t = \left[G_t - \frac{T_t}{P_t}\right] - r^* B_{t-1}^g \) y \( \left[G_t - \frac{T_t}{P_t}\right] \) es el <em>déficit primario</em>.</li>
+    <li>La ecuación muestra que un déficit ( \( DEF_t > 0 \) ) debe financiarse con creación de dinero ( \( M_t - M_{t-1} > 0 \) ), con desacumulación de activos ( \( B_t^g - B_{t-1}^g < 0 \) ), o ambas.</li>
+</ul>
+
+<h3>Equilibrio bajo tipo de cambio fijo</h3>
+<ul>
+    <li>Con \( E_t = E \) para todo \( t \), por PPP \( P = E \) es fijo, la devaluación esperada es cero y \( i_t = r^* \). La demanda de dinero \( \frac{M}{E} = L(\bar{C}, r^*) \) implica \( M_t = M \) constante.</li>
+    <li>El régimen fijo elimina el señoreaje como fuente de financiación; el déficit se financia únicamente desacumulando activos externos:
+        $$B_t^g - B_{t-1}^g = -DEF_t.$$
+    </li>
+    <li>La sostenibilidad del tipo de cambio depende de la disciplina fiscal: con un déficit persistente el gobierno pasa de acreedor a deudor y, si no puede endeudarse indefinidamente, debe eliminar el déficit o abandonar el régimen fijo — esta última alternativa conduce a una <em>crisis de Balanza de Pagos</em>.</li>
+</ul>
+
+<h3>Consecuencias fiscales de una devaluación</h3>
+<ul>
+    <li>Una devaluación por una sola vez ( \( E \to E' \), con \( E' > E \) ) eleva los precios por PPP ( \( \triangle E = \triangle P \) ) y actúa como un <em>impuesto sobre los saldos reales</em>.</li>
+    <li>Para reconstituir sus saldos, los hogares venden activos externos al banco central: el efecto neto es que los hogares son más pobres y el gobierno acumula activos externos, pero la solución es momentánea.</li>
+    <li>Como la devaluación es por una sola vez, la <em>devaluación esperada</em> sigue siendo cero, por lo que \( i_t = r^* \) no cambia y el señoreaje solo es positivo en el periodo de la devaluación.</li>
+</ul>
+
+<h3>Equilibrio bajo tipo de cambio flexible</h3>
+<ul>
+    <li>Con tipo de cambio flexible la oferta monetaria es exógena; suponga una regla monetaria \( M_t = (1 + \mu) M_{t-1} \), con \( 0 < \mu < 1 \).</li>
+    <li>Se conjetura (y se verifica) que el tipo de cambio y los precios crecen a la tasa \( \mu \):
+        $$\frac{E_{t+1}}{E_t} = 1 + \mu, \qquad \frac{P_{t+1}}{P_t} = 1 + \mu.$$
+    </li>
+    <li>Por paridad de intereses, \( 1 + i_t = (1 + r^*)(1 + \mu) \): la tasa de interés nominal es constante y creciente en \( \mu \), es decir \( i_t = i(\mu) \) con \( i'>0 \).</li>
+    <li>El señoreaje resulta
+        $$\frac{M_t - M_{t-1}}{E_t} = L\big(\bar{C}, i(\mu)\big)\left(\frac{\mu}{1+\mu}\right),$$
+        donde \( \frac{\mu}{1+\mu} \) es la tasa del <em>impuesto inflacionario</em> y \( L(\bar{C}, i(\mu)) \) su base.</li>
+    <li>Un aumento de \( \mu \) tiene dos efectos opuestos: reduce los saldos reales deseados (al subir \( i \)) pero eleva \( \frac{\mu}{1+\mu} \). Existe un \( \mu \) crítico más allá del cual el señoreaje cae: es una aplicación de la <em>curva de Laffer</em>.</li>
+</ul>
+
+<h3>Finanzas inflacionarias: monetización del déficit</h3>
+<ul>
+    <li>Si el gobierno agotó sus activos externos ( \( B_t^g - B_{t-1}^g = 0 \) ), la única fuente restante es el señoreaje y debe <em>monetizar el déficit</em>:
+        $$DEF = L\big(\bar{C}, i(\mu)\big)\left(\frac{\mu}{1+\mu}\right).$$
+    </li>
+    <li>Si \( DEF \) es menor que el señoreaje máximo, hay dos tasas \( \mu_1 < \mu_2 \) que lo financian (empíricamente las economías se ubican en la más baja). Si \( DEF \) supera el señoreaje máximo, el gobierno imprime a tasas crecientes y se presenta <em>hiperinflación</em>; la única salida es reducir el déficit.</li>
+</ul>
+
+<h3>Un ejemplo numérico</h3>
+<ul>
+    <li>Con demanda de saldos reales \( \frac{M_t}{E_t} = \gamma \bar{C}\left(\frac{1 + i_t}{i_t}\right) \), un déficit de \( DEF/Q = 0.1 \), \( \bar{C}/Q = 0.65 \), \( r^* = 0.05 \) y \( \gamma = 0.2 \), la tasa de crecimiento del dinero que monetiza el déficit es
+        $$\mu = \frac{r^*(DEF/Q)}{(1+r^*)\left[\gamma(\bar{C}/Q) - (DEF/Q)\right]} = \frac{0.05 \cdot 0.1}{1.05\,(0.2 \cdot 0.65 - 0.1)} \approx 0.16.$$
+    </li>
+    <li>El gobierno debe aumentar la oferta monetaria al \( 16\% \) anual; la inflación y la devaluación serán del \( 16\% \) y la tasa de interés nominal del \( 21\% \). Si el déficit cae al \( 1\% \) del PIB, la tasa de equilibrio baja al \( 11\% \).</li>
+</ul>
+
+<h2>Crisis de Balanza de Pagos (BOP)</h2>
+<ul>
+    <li>Una crisis de BOP ocurre cuando el gobierno es incapaz o no desea cumplir sus obligaciones (p. ej. México 1982, Argentina 2000). El modelo de Krugman (1979) fue el primero en explicar, con expectativas racionales, el <em>timing</em> de la crisis: los agentes anticipan la liberación del tipo de cambio.</li>
+    <li>Un hecho estilizado es la pérdida masiva de reservas internacionales antes del abandono del tipo de cambio: anticipando la devaluación, el público cambia moneda doméstica por externa a precio fijo.</li>
+    <li>Con un déficit persistente \( DEF > 0 \) y activos iniciales \( B_0^g > 0 \) que no pueden ser negativos, la dinámica de la crisis tiene tres fases:
+        <ol>
+            <li><strong>Pre-colapso ( \( t = 1, \dots, T-2 \) ):</strong> tipo de cambio fijo, \( P = E \), devaluación esperada nula, \( i_t = r^* \). El banco central pierde \( DEF \) unidades de reservas por periodo: \( B_t^g - B_{t-1}^g = -DEF \).</li>
+            <li><strong>Crisis ( \( t = T-1 \) ):</strong> aunque \( E \) sigue fijo, el público ya espera la depreciación, por lo que \( i_{T-1} = i(\mu) > r^* \). Los saldos reales caen a su nivel post-crisis y, al ser \( E \) constante, la caída recae toda sobre los saldos nominales: el público "corre" al banco central y las reservas caen en más que el \( DEF \) — un <em>ataque especulativo</em> à la Krugman.</li>
+            <li><strong>Post-colapso ( \( t = T,\, T+1, \dots \) ):</strong> el tipo de cambio se libera, la oferta monetaria crece a \( \mu > 0 \), la inflación es \( \mu \) y el señoreaje financia el déficit: \( DEF = L(\bar{C}, i(\mu))\left(\frac{\mu}{1+\mu}\right) \).</li>
+        </ol>
+    </li>
+    <li>Al pasar de régimen fijo a flexible, la inflación salta de \( 0 \) a \( \mu \), la fuente de financiación pasa de desacumular activos a señoreaje positivo, y los saldos reales son menores (por la mayor tasa de interés nominal).</li>
+</ul>
+
+<nav class="page-nav">
+  <a href="semana2.html">← Semana 2</a>
+  <span class="spacer"></span>
+  <a href="index.html">Inicio →</a>
+</nav>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    Macroeconomía III · Dr. Richard Jaimes · Pontificia Universidad Javeriana
+  </div>
+</footer>
+
+</body>
+</html>

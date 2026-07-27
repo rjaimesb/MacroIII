@@ -1,58 +1,357 @@
+/* ==========================================================================
+   Macroeconomía III — course site styles
+   ========================================================================== */
+
+:root {
+  --bg: #fbfbfa;
+  --surface: #ffffff;
+  --text: #24272b;
+  --muted: #616b76;
+  --heading: #14213d;
+  --accent: #1b4f9c;          /* Javeriana blue */
+  --accent-strong: #143a75;
+  --accent-soft: #eef3fb;
+  --border: #e4e8ee;
+  --badge-bg: #eef1f5;
+  --badge-text: #6b7480;
+  --shadow: 0 1px 2px rgba(20, 33, 61, .05), 0 6px 20px rgba(20, 33, 61, .05);
+  --radius: 10px;
+  --maxw: 800px;
+  --ui-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --prose-font: Georgia, "Times New Roman", Cambria, serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14161a;
+    --surface: #1b1e24;
+    --text: #e6e8ec;
+    --muted: #9aa4b0;
+    --heading: #eaf0fb;
+    --accent: #6ea8ff;
+    --accent-strong: #9cc2ff;
+    --accent-soft: #1d2836;
+    --border: #2a2f38;
+    --badge-bg: #242a33;
+    --badge-text: #9aa4b0;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 6px 22px rgba(0, 0, 0, .35);
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
 
 body {
-  font-family: 'Georgia', serif;
-  background-color: #fdfdfd;
-  color: #2c2c2c;
-  margin: 40px;
-  line-height: 1.6;
+  margin: 0;
+  font-family: var(--prose-font);
+  font-size: 18px;
+  line-height: 1.65;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3 {
-  color: #1a1a1a;
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 5px;
+.container {
+  width: 100%;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-h1 {
-  font-size: 2em;
-  margin-bottom: 0.5em;
+/* ---- Site header ---------------------------------------------------------- */
+
+.site-header {
+  background: linear-gradient(180deg, var(--heading), var(--accent-strong));
+  border-bottom: 3px solid var(--accent);
 }
 
-h2 {
-  font-size: 1.5em;
-  margin-top: 1.5em;
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  flex-wrap: wrap;
 }
 
-p {
-  font-size: 1.1em;
-  margin-bottom: 1em;
-}
-
-ul {
-  list-style-type: disc;
-  margin-left: 20px;
-}
-
-li {
-  margin-bottom: 0.5em;
-}
-
-a {
-  color: #0056b3;
+.brand {
+  font-family: var(--ui-font);
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: .2px;
+  color: #fff;
   text-decoration: none;
 }
 
-a:hover {
-  text-decoration: underline;
+.brand:hover { opacity: .9; text-decoration: none; }
+
+.term {
+  font-family: var(--ui-font);
+  font-size: .8rem;
+  font-weight: 600;
+  letter-spacing: .3px;
+  color: #dbe4f4;
+  background: rgba(255, 255, 255, .12);
+  border: 1px solid rgba(255, 255, 255, .18);
+  padding: 3px 10px;
+  border-radius: 999px;
 }
 
-section {
-  margin-bottom: 2em;
+/* ---- Main / prose --------------------------------------------------------- */
+
+main { padding: 8px 0 48px; }
+
+h1, h2, h3 {
+  color: var(--heading);
+  line-height: 1.25;
+  font-family: var(--ui-font);
 }
 
-.topic-week {
-  margin-bottom: 1em;
-  padding: 10px;
-  background-color: #f0f0f0;
-  border-left: 4px solid #0056b3;
+h1 {
+  font-size: 2rem;
+  margin: 32px 0 8px;
+}
+
+.lead {
+  color: var(--muted);
+  font-family: var(--ui-font);
+  font-size: 1.02rem;
+  margin: 0 0 24px;
+}
+
+h2 {
+  font-size: 1.35rem;
+  margin: 40px 0 14px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+}
+
+h3 {
+  font-size: 1.12rem;
+  margin: 28px 0 10px;
+}
+
+p { margin: 0 0 16px; }
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+main ul, main ol { padding-left: 22px; margin: 0 0 16px; }
+main li { margin-bottom: 6px; }
+
+em { color: inherit; }
+
+/* ---- Cards ---------------------------------------------------------------- */
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 20px 24px;
+}
+
+.card h2:first-child { margin-top: 0; }
+
+/* Course info as a definition grid */
+.course-info dl {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 8px 18px;
+  margin: 0;
+  font-family: var(--ui-font);
+  font-size: .98rem;
+}
+
+.course-info dt {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.course-info dd { margin: 0; }
+
+/* Section divider inside the plan (Largo Plazo / Corto Plazo / ...) */
+.block-title {
+  font-family: var(--ui-font);
+  font-size: .82rem;
+  font-weight: 700;
+  letter-spacing: .8px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 26px 0 10px;
+}
+.block-title:first-of-type { margin-top: 4px; }
+.block-title .sub {
+  display: block;
+  color: var(--muted);
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: .95rem;
+  margin-top: 2px;
+}
+
+/* Exam / evaluation list */
+.exam-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+.exam-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  font-family: var(--ui-font);
+  font-size: .98rem;
+}
+.exam-when {
+  flex: 0 0 auto;
+  min-width: 104px;
+  font-weight: 700;
+  color: var(--accent);
+}
+.exam-name { flex: 1 1 auto; }
+.exam-w { flex: 0 0 auto; color: var(--muted); font-variant-numeric: tabular-nums; }
+
+/* ---- Week list ------------------------------------------------------------ */
+
+.week-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.week-item a,
+.week-item .week-inner {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  padding: 14px 18px;
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius);
+  background: var(--surface);
+  transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+}
+
+.week-item a { text-decoration: none; color: inherit; }
+
+.week-item a:hover {
+  transform: translateX(2px);
+  box-shadow: var(--shadow);
+  border-left-color: var(--accent-strong);
+}
+
+.week-item.upcoming .week-inner {
+  border-left-color: var(--border);
+  opacity: .8;
+}
+
+.week-num {
+  flex: 0 0 auto;
+  min-width: 96px;
+  font-family: var(--ui-font);
+  font-weight: 700;
+  font-size: .82rem;
+  letter-spacing: .3px;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.week-item.upcoming .week-num { color: var(--muted); }
+
+.week-topic {
+  flex: 1 1 auto;
+  font-size: 1.02rem;
+  line-height: 1.45;
+}
+
+.badge {
+  flex: 0 0 auto;
+  align-self: center;
+  font-family: var(--ui-font);
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  color: var(--badge-text);
+  background: var(--badge-bg);
+  border-radius: 999px;
+  padding: 3px 9px;
+  white-space: nowrap;
+}
+
+/* ---- Week page: back link + footer nav ------------------------------------ */
+
+.crumb {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--ui-font);
+  font-size: .9rem;
+  color: var(--muted);
+  margin: 22px 0 4px;
+}
+
+.crumb a { color: var(--muted); }
+.crumb a:hover { color: var(--accent); }
+
+.page-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 40px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+  font-family: var(--ui-font);
+  font-size: .95rem;
+}
+
+.page-nav a { font-weight: 600; }
+.page-nav .spacer { flex: 1; }
+
+/* Callout for pages still in preparation */
+.notice {
+  font-family: var(--ui-font);
+  background: var(--accent-soft);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 14px 18px;
+  color: var(--muted);
+  margin: 18px 0;
+}
+
+/* Display math should scroll rather than overflow on small screens */
+mjx-container[display="true"] {
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 100%;
+}
+
+/* ---- Footer --------------------------------------------------------------- */
+
+.site-footer {
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-family: var(--ui-font);
+  font-size: .85rem;
+}
+
+.site-footer .container {
+  padding-top: 22px;
+  padding-bottom: 30px;
+}
+
+/* ---- Responsive ----------------------------------------------------------- */
+
+@media (max-width: 560px) {
+  body { font-size: 17px; }
+  h1 { font-size: 1.7rem; }
+  .week-item a, .week-item .week-inner { flex-wrap: wrap; gap: 4px 12px; }
+  .week-num { min-width: auto; }
+  .course-info dl { grid-template-columns: 1fr; gap: 2px 0; }
+  .course-info dt { margin-top: 8px; }
+  .exam-list li { flex-wrap: wrap; gap: 2px 12px; }
+  .exam-when { min-width: auto; }
 }
