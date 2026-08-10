@@ -23,38 +23,120 @@
 <p class="crumb"><a href="index.html">← Volver al inicio</a></p>
 <h1>Semana 2: El modelo de Sidrauski. Cantidad óptima de dinero.</h1>
 
-<h2>Introducción</h2>
+<p class="notice">Esta página es un <strong>mapa de la clase</strong>: enuncia los ingredientes, los resultados principales y la intuición. Las <em>derivaciones completas</em> (el hamiltoniano, la ecuación de Euler, la construcción del diagrama de fase y la regla de Friedman) las hacemos en el tablero. Ven a clase con las preguntas guía del final.</p>
+
+<h2>Motivación</h2>
 <ul>
-    <li>El modelo de Sidrauski (1967):
+    <li>Baumol-Tobin fue <em>equilibrio parcial</em>: un agente aislado, con \( Y \) e \( i \) dados. ¿Qué pasa en <em>equilibrio general con crecimiento</em>?</li>
+    <li>El modelo de Sidrauski (1967) responde esa pregunta: es esencialmente el <em>modelo de Ramsey con dinero</em>.</li>
+    <li>El dinero es un <em>activo dominado</em> (paga menos que el capital). Para generar demanda de dinero hay tres estrategias:
         <ol>
-            <li>Estructura á la Ramsey</li>
-            <li>Dinero en la función de utilidad  </li>
-            <li>El dinero es un activo dominado (demanda positiva en equilibrio debido al motivo transacción) </li>
-            <li>Desarrollo en tiempo continuo </li>
+            <li><em>Cash-in-advance</em> (Clower)</li>
+            <li>Costos de transacción (Baumol-Tobin)</li>
+            <li>Dinero en la función de utilidad (Sidrauski) — la de hoy</li>
         </ol>
     </li>
+    <li>Feenstra (1986): bajo condiciones razonables las tres son <em>funcionalmente equivalentes</em>. Poner \( m \) en la utilidad es una forma reducida de los servicios de liquidez.</li>
 </ul>
 
-<h2>Supuestos</h2>
+<h2>El modelo: los ingredientes</h2>
 <ul>
-    <li>Función de utilidad instantánea \( u(c,m) \) donde \( c \) es consumo per cápita y \( m \equiv \frac{M}{PN} \) son los saldos reales per cápita </li>
-    <li>La función objetivo es:<br>
-    $$ V = \int_{0}^{\infty} u(c,m)e^{-\theta t}dt$$
+    <li>Función objetivo, con \( c \) el consumo per cápita y \( m=\frac{M}{PN} \) los saldos reales per cápita:<br>
+        $$V=\int_{0}^{\infty} u(c,m)\,e^{-\theta t}\,dt$$
     </li>
-    <li>La tasa de descuento es \( \theta > 0\).</li>
-    <li>Los hogares ofrecen su trabajo de forma inelástica  y reciben un salario, \(w\), y retornos al capital o al ahorro, \(r\).  </li>
-    <li>Recuerde que el retorno real del dinero es \(-\pi\) y su costo de oportunidad es \(i\). </li>
+    <li>Restricción presupuestaria en términos per cápita:<br>
+        $$c+\dot{k}+\dot{m}=w+rk+x-n(k+m)-\pi m$$
+    </li>
+    <li>Definiendo los activos totales \( a=k+m \), el costo de oportunidad de tener dinero es la <em>tasa nominal</em> \( i=r+\pi \) (ecuación de Fisher), igual que en Baumol-Tobin.</li>
+    <li>Dinámica de los saldos reales: \( \dfrac{\dot m}{m}=\mu-\pi-n \), donde \( \mu\equiv\dot M/M \) es el instrumento de política monetaria.</li>
 </ul>
 
-<h2>Restricción presupuestaria en términos per cápita (revisar su desarrollo en clase):</h2>
+<h2>La solución, en una línea</h2>
 <ul>
-    <li>Asuma que los hogares reciben transferencias del Estado, \( X \).</li>
-    <li>Variables en minúscula denotan términos per cápita</li>
-    <li>Recuerde que \(\frac{\dot{P}}{P}= \pi \) y \(\frac{\dot{N}}{N}= n \). Así, la RP es:<br>
-    $$c+\dot{k}+\dot{m}=w+rk+x-n(k+m)-\pi m$$
+    <li>Se resuelve con un <em>hamiltoniano en valor corriente</em> (dos controles, \( c \) y \( m \); un estado, \( a \)). El desarrollo completo lo vemos en clase.</li>
+    <li><strong>Resultado clave — la demanda de dinero:</strong> combinando las condiciones de primer orden,
+        $$\frac{u_m(c,m)}{u_c(c,m)}=r+\pi=i \qquad\Longrightarrow\qquad m=\phi(c,i).$$
+        Obtenemos —<em>derivada, no postulada</em>— una demanda de dinero creciente en el gasto y decreciente en la tasa nominal: la curva LM microfundamentada.</li>
+</ul>
+
+<h2>Resultados de largo plazo</h2>
+<ul>
+    <li>Estado estacionario ( \( \dot c=\dot m=\dot k=0 \) ):
+        $$f'(k^*)=\theta+n, \qquad c^*=f(k^*)-nk^*, \qquad \pi=\mu-n.$$
     </li>
-    <li>Defina los activos totales como \( a = k +m \), entonces, la restricción presupuestaria se puede escribir como:<br>
-    $$\dot{a}=w+x+(r-n)a-c-(r+\pi)m$$
+    <li><strong>Superneutralidad:</strong> las condiciones de \( k^* \) y \( c^* \) son las mismas que en Ramsey <em>sin</em> dinero. Ni \( \mu \), ni \( \pi \), ni \( m \) afectan las variables reales de largo plazo. Se cumple la <em>dicotomía clásica</em>.</li>
+    <li>Pero el dinero <em>sí</em> afecta el nivel de utilidad, porque \( m \) entra en \( u(c,m) \). Esa distinción es la que abre la puerta a la regla de Friedman.</li>
+</ul>
+
+<h2>El diagrama de fase</h2>
+<div style="overflow-x:auto">
+<svg viewBox="0 0 480 300" style="width:100%;max-width:520px;height:auto;display:block;margin:0 auto" role="img" aria-label="Diagrama de fase del modelo de Sidrauski en el plano capital-consumo">
+  <defs>
+    <marker id="ah" markerWidth="9" markerHeight="9" refX="6.5" refY="3" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L7,3 L0,6 Z" style="fill:var(--accent)"/>
+    </marker>
+  </defs>
+  <!-- axes -->
+  <g stroke="currentColor" stroke-width="1.5" fill="none">
+    <line x1="40" y1="255" x2="455" y2="255"/>
+    <line x1="40" y1="255" x2="40" y2="35"/>
+    <path d="M451,251 L457,255 L451,259" stroke-linejoin="round"/>
+    <path d="M36,41 L40,33 L44,41" stroke-linejoin="round"/>
+  </g>
+  <text x="461" y="259" fill="currentColor" font-size="14" font-style="italic">k</text>
+  <text x="30" y="34" fill="currentColor" font-size="14" font-style="italic">c</text>
+  <!-- k-dot = 0 hump (guide) -->
+  <polyline points="48,234 81,179 122,139 163,116 204,102 241,98 286,106 327,126 368,160 409,207 431,238"
+            fill="none" stroke="var(--muted)" stroke-width="2"/>
+  <text x="345" y="150" fill="var(--muted)" font-size="13" font-style="italic">k&#775;=0</text>
+  <!-- c-dot = 0 vertical at k* -->
+  <line x1="163" y1="255" x2="163" y2="62" stroke="#d9534f" stroke-width="2"/>
+  <text x="150" y="55" fill="#d9534f" font-size="13" font-style="italic">c&#775;=0</text>
+  <text x="158" y="273" fill="currentColor" font-size="13" font-style="italic">k*</text>
+  <!-- golden rule -->
+  <line x1="241" y1="255" x2="241" y2="98" stroke="var(--muted)" stroke-width="1" stroke-dasharray="4 3"/>
+  <circle cx="241" cy="98" r="2.5" fill="var(--muted)"/>
+  <text x="228" y="273" fill="var(--muted)" font-size="13" font-style="italic">k_GR</text>
+  <!-- stable saddle path (upward sloping, both arms to E*) -->
+  <path d="M69,225 C100,190 120,150 163,116" fill="none" stroke="var(--accent)" stroke-width="3" marker-end="url(#ah)"/>
+  <path d="M274,67 C220,90 185,103 163,116" fill="none" stroke="var(--accent)" stroke-width="3" marker-end="url(#ah)"/>
+  <text x="52" y="240" fill="var(--accent)" font-size="12">senda estable</text>
+  <!-- E* -->
+  <circle cx="163" cy="116" r="4" fill="currentColor"/>
+  <text x="169" y="110" fill="currentColor" font-size="13" font-style="italic">E*</text>
+</svg>
+</div>
+<ul>
+    <li>Las dos isoclinas: \( \dot k=0 \Rightarrow c=f(k)-nk \) (la joroba, con máximo en la regla de oro \( k_{GR} \)) y \( \dot c=0 \Rightarrow f'(k)=\theta+n \) (la vertical en \( k^* \)).</li>
+    <li>Como \( \theta>0 \), el estado estacionario cumple \( k^*<k_{GR} \): \( E^* \) está a la izquierda del pico. \( E^* \) es un <em>punto de silla</em> y la senda estable tiene <em>pendiente positiva</em>.</li>
+    <li>El campo de direcciones y la prueba de que solo la senda estable es óptima (transversalidad) los construimos <strong>paso a paso en clase</strong>.</li>
+</ul>
+
+<h2>El efecto Tobin</h2>
+<ul>
+    <li>Fuera del estado estacionario, el dinero tiene efectos reales <em>solo si</em> \( u_{cm}\neq0 \) (utilidad no separable): la inflación induce sustitución entre dinero y capital.</li>
+    <li>Como el dinero es una mala reserva de valor frente al capital, los efectos estimados son <em>pequeños</em>.</li>
+</ul>
+
+<h2>La cantidad óptima de dinero: la regla de Friedman</h2>
+<ul>
+    <li>El dinero afecta la utilidad pero no \( k^* \) ni \( c^* \); conviene entonces saturar la liquidez, \( u_m(c^*,m^*)=0 \), lo que implica
+        $$i=0 \qquad\Longleftrightarrow\qquad \pi=-r \qquad\Longleftrightarrow\qquad \mu=-\theta.$$
+    </li>
+    <li><em>Intuición:</em> producir dinero no cuesta nada socialmente, pero mantenerlo cuesta \( i \) al individuo. El óptimo iguala el precio privado al costo social: \( i=0 \).</li>
+    <li>¿Por qué ningún banco central la aplica (señoreaje, rigideces nominales, <em>zero lower bound</em>, segundo mejor)? Lo discutimos en clase.</li>
+</ul>
+
+<h2>Para preparar la clase</h2>
+<ul>
+    <li><strong>Lecturas:</strong> Driscoll (2001, secc. 1.4); Blanchard &amp; Fischer (1989, cap. 4); Walsh (2010, cap. 2).</li>
+    <li><strong>Preguntas guía</strong> (para pensar <em>antes</em> de clase):
+        <ol>
+            <li>¿Por qué el dinero es superneutral en el largo plazo pero puede no serlo en la transición?</li>
+            <li>¿Qué signo de \( u_{cm} \) genera el efecto Tobin y en qué dirección?</li>
+            <li>¿Cuál es la tasa de inflación óptima y por qué es <em>negativa</em>?</li>
+            <li>¿Por qué \( E^* \) queda a la izquierda de la regla de oro?</li>
+        </ol>
     </li>
 </ul>
 
